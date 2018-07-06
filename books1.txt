@@ -1,0 +1,71 @@
+9780590353403
+Harry Potter And The Sorcerer's Stone
+J.K. Rowling
+34
+1
+fantasy
+14.52
+
+9780439064866
+Harry Potter and the Chamber of Secrets
+J.K. Rowling
+3
+1
+fantasy
+14.69
+
+9780395489314
+The Fellowship of the Ring
+J.R.R. Tolkien
+10
+1
+fantasy
+16.93
+
+9780547928227
+The Hobbit
+J.R.R. Tolkien
+3
+7
+fantasy
+10.63
+
+9780547928203
+The Two Towers
+J.R.R. Tolkien
+1
+3
+fantasy
+17.05
+
+9780553582024
+A Feast For Crows
+George Martin
+1
+66
+fantasy
+19.59
+
+9780290204890
+Batman: Year One
+Frank Miller
+1
+88
+fantasy
+10.19
+
+9781401216672
+Batman: The Killing Joke
+Alan Moore
+1
+100
+fantasy
+14.13
+
+9781984355331
+The Jungle Book
+Rudyard Kipling
+1
+74
+fantasy
+3.99
