@@ -149,3 +149,187 @@ J.K. Rowling
 118
 fantasy
 10.49
+
+9780078022128
+Software Engineering: A Practitioner's Approach
+Roger S. Pressman
+100
+8
+CS
+119.95
+
+9780134494166 
+Clean Architecture: A Craftsman's Guide to Software Structure and Design
+Robert C. Martin
+87
+1
+CS
+30.82
+
+9780596517748
+JavaScript: The Good Parts
+Douglas Crockford
+23
+1
+CS
+20.24
+
+9781285852744
+C++ Programming: From Problem Analysis to Program Design
+D s. Malik
+5
+7
+CS
+111.21
+
+9781784398675 
+Application Development with Qt Creato
+Ray Rischpater
+10
+2
+CS
+36.49
+
+9781118823781
+C++ All-in-One For Dummies
+John Paul Mueller
+4
+3
+CS
+23.75
+
+9781433110818 
+Computer-Mediated Communication in Personal Relationships
+Kevin B. Wright
+9
+1
+CS
+34.67
+
+9781305116634
+Data Communications and Computer Networks: A Business User's Approach
+Curt White
+15
+8
+CS
+78.90
+
+9780321884497
+Database Design for Mere Mortals: A Hands-On Guide to Relational Database Design
+Michael J. Hernandez
+33
+3
+CS
+54.99
+
+9781285196145
+Database Systems: Design, Implementation, & Management
+Carlos Coronel
+55
+11
+CS
+89.99
+
+9780133544626
+Database Concepts
+David M. Kroenke
+0
+7
+CS
+69.30
+
+9781118907443
+Web Design with HTML, CSS, JavaScript and jQuery Set
+Jon Duckett
+67
+1
+CS
+58.00
+
+9781285196145
+Database Systems: Design, Implementation, & Management
+Carlos Coronel
+12
+11
+CS
+89.99
+
+9780134076423 
+Computer Science: An Interdisciplinary Approach
+Robert Sedgewick
+89
+1
+CS
+67.19
+
+9780201100884
+Compilers: Principles, Techniques, and Tools
+Alfred V. Aho
+33
+1
+CS
+25.00
+
+9780262032933
+Introduction to Algorithms
+Thomas H. Cormen
+33
+2
+CS
+29.99
+
+9780999685907
+The Self-Taught Programmer: The Definitive Guide to Programming Professionally
+Cory Althoff
+3
+1
+CS
+15.17
+
+9780133760064
+Computer Science: An Overview
+Glenn Brookshear
+32
+12
+CS
+159.79
+
+9780262510875
+Structure and Interpretation of Computer Programs
+Harold Abelson
+22
+2
+CS
+40.97
+
+9781590282410
+Python Programming: An Introduction to Computer Science
+John Zelle
+1
+2
+CS
+19.99
+
+9781250118363
+Algorithms to Live By: The Computer Science of Human Decisions
+Brian Christian
+12
+3
+CS
+9.98
+
+9790692106715 
+Computer Science Principles: The Foundational Concepts of Computer Science
+Kevin P. Hare
+4
+2
+CS
+11.39
+
+9780789749840
+How Computers Work: The Evolution of Technology
+Ron White
+2
+10
+CS
+28.76
