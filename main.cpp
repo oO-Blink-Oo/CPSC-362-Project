@@ -9,7 +9,7 @@ void signInPrompt();
 void featureMenu();
 
 int main() {
-	featureMenu();
+	featureMenu();//just testing here, so we could see what the feature menu looks like
 	welcomePrompt();
 
 	return 0;
