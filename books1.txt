@@ -1,335 +1,62 @@
-9780590353403
-Harry Potter And The Sorcerer's Stone
-J.K. Rowling
-34
-1
-fantasy
-14.52
-
-9780439064866
-Harry Potter and the Chamber of Secrets
-J.K. Rowling
-3
-1
-fantasy
-14.69
-
-9780395489314
-The Fellowship of the Ring
-J.R.R. Tolkien
-10
-1
-fantasy
-16.93
-
-9780547928227
-The Hobbit
-J.R.R. Tolkien
-3
-7
-fantasy
-10.63
-
-9780547928203
-The Two Towers
-J.R.R. Tolkien
-1
-3
-fantasy
-17.05
-
-9780553582024
-A Feast For Crows
-George Martin
-1
-66
-fantasy
-19.59
-
-9780290204890
-Batman: Year One
-Frank Miller
-1
-88
-fantasy
-10.19
-
-9781401216672
-Batman: The Killing Joke
-Alan Moore
-1
-100
-fantasy
-14.13
-
-9781984355331
-The Jungle Book
-Rudyard Kipling
-1
-74
-fantasy
-3.99
-
-9780141331645
-Pinocchio
-Carlo Collodi
-5
-84
-fantasy
-5.99
-
-9781420952483
-Peter Pan
-J.M. Barrie
-1
-45
-fantasy
-5.99
-
-9780486291161
-The Wonderful Wizard Of Oz
-Frank Baum
-1
-62
-fantasy
-9.95
-
-9781721968558
-Around The World in 80 Days
-Jules Verne
-6
-50
-fantasy
-12.99
-
-9781840226249
-The Mysterious Island
-Jules Verne
-1
-12
-fantasy
-24.99
-
-9780486440880
-Journey To The Center Of The Earth
-Jules Verne
-13
-64
-fantasy
-9.95
-
-9781514650462
-Treasure Island
-Robert Stevenson
-2
-15
-fantasy
-6.80
-
-978043913960
-Harry Potter And The Goblet Of Fire
-J.K. Rowling
-2
-123
-fantasy
-9.78
-
-9780439358071
-Harry Potter And The Order Of The Phoenix
-J.K. Rowling
-3
-116
-fantasy
-9.49
-
-9780545139700
-Harry Potter And The Deathly Hallows
-J.K. Rowling
-7
-118
-fantasy
-10.49
-
-9780078022128
-Software Engineering: A Practitioner's Approach
-Roger S. Pressman
-100
-8
-CS
-119.95
-
-9780134494166 
-Clean Architecture: A Craftsman's Guide to Software Structure and Design
-Robert C. Martin
-87
-1
-CS
-30.82
-
-9780596517748
-JavaScript: The Good Parts
-Douglas Crockford
-23
-1
-CS
-20.24
-
-9781285852744
-C++ Programming: From Problem Analysis to Program Design
-D s. Malik
-5
-7
-CS
-111.21
-
-9781784398675 
-Application Development with Qt Creato
-Ray Rischpater
-10
-2
-CS
-36.49
-
-9781118823781
-C++ All-in-One For Dummies
-John Paul Mueller
-4
-3
-CS
-23.75
-
-9781433110818 
-Computer-Mediated Communication in Personal Relationships
-Kevin B. Wright
-9
-1
-CS
-34.67
-
-9781305116634
-Data Communications and Computer Networks: A Business User's Approach
-Curt White
-15
-8
-CS
-78.90
-
-9780321884497
-Database Design for Mere Mortals: A Hands-On Guide to Relational Database Design
-Michael J. Hernandez
-33
-3
-CS
-54.99
-
-9781285196145
-Database Systems: Design, Implementation, & Management
-Carlos Coronel
-55
-11
-CS
-89.99
-
-9780133544626
-Database Concepts
-David M. Kroenke
-0
-7
-CS
-69.30
-
-9781118907443
-Web Design with HTML, CSS, JavaScript and jQuery Set
-Jon Duckett
-67
-1
-CS
-58.00
-
-9781285196145
-Database Systems: Design, Implementation, & Management
-Carlos Coronel
-12
-11
-CS
-89.99
-
-9780134076423 
-Computer Science: An Interdisciplinary Approach
-Robert Sedgewick
-89
-1
-CS
-67.19
-
-9780201100884
-Compilers: Principles, Techniques, and Tools
-Alfred V. Aho
-33
-1
-CS
-25.00
-
-9780262032933
-Introduction to Algorithms
-Thomas H. Cormen
-33
-2
-CS
-29.99
-
-9780999685907
-The Self-Taught Programmer: The Definitive Guide to Programming Professionally
-Cory Althoff
-3
-1
-CS
-15.17
-
-9780133760064
-Computer Science: An Overview
-Glenn Brookshear
-32
-12
-CS
-159.79
-
-9780262510875
-Structure and Interpretation of Computer Programs
-Harold Abelson
-22
-2
-CS
-40.97
-
-9781590282410
-Python Programming: An Introduction to Computer Science
-John Zelle
-1
-2
-CS
-19.99
-
-9781250118363
-Algorithms to Live By: The Computer Science of Human Decisions
-Brian Christian
-12
-3
-CS
-9.98
-
-9790692106715 
-Computer Science Principles: The Foundational Concepts of Computer Science
-Kevin P. Hare
-4
-2
-CS
-11.39
-
-9780789749840
-How Computers Work: The Evolution of Technology
-Ron White
-2
-10
-CS
-28.76
+9780590353403 Harry_Potter_And_The_Sorcerer's_Stone J.K Rowling 34 1 fantasy 14.52
+9780439064866 Harry_Potter_and_the_Chamber_of_Secrets J.K Rowling 3 1 fantasy 14.69
+9780395489314 The_Fellowship_of_the_Ring J.R Tolkien 10 1 fantasy 16.93
+9780547928227 The_Hobbit J.R.R Tolkien 3 7 fantasy 10.63
+9780547928203 The_Two_Towers J.R.R Tolkien 1 3 fantasy 17.05
+9780553582024 A_Feast_For_Crows George Martin 1 66 fantasy 19.59
+9780290204890 Batman:_Year_One Frank Miller 1 88 fantasy 10.19
+9781401216672 Batman:_The_Killing_Joke Alan_Moore 1 100 fantasy 14.13
+9781984355331 The_Jungle_Book Rudyard Kipling 1 74 fantasy 3.99
+9780141331645 Pinocchio Carlo_Collodi 5 84 fantasy 5.99
+9781420952483 Peter_Pan J.M Barrie 1 45 fantasy 5.99
+9780486291161 The_Wonderful_Wizard_Of_Oz Frank Baum 1 62 fantasy 9.95
+9781721968558 Around_The_World_in_80_Days Jules Verne 6 50 fantasy 12.99
+9781840226249 The_Mysterious_Island Jules_Verne 1 12 fantasy 24.99
+9780486440880 Journey_To_The_Center_Of_The_Earth Jules Verne 13 64 fantasy 9.95
+9781514650462 Treasure_Island Robert Stevenson 2 15 fantasy 6.80
+978043913960 Harry_Potter_And_The_Goblet_Of_Fire J.K Rowling 2 123 fantasy 9.78
+9780439358071 Harry_Potter_And_The_Order_Of_The_Phoenix J.K Rowling 3 116 fantasy 9.49
+9780545139700 Harry_Potter_And_The_Deathly_Hallows J.K Rowling 7 118 fantasy 10.49
+9780078022128 Software_Engineering:_A_Practitioner's_Approach Roger Pressman 100 8 CS 119.95
+9780134494166 Clean Architecture:_A_Craftsman's_Guide_to_Software_Structure_and_Design Robert Martin 87 1 CS 30.82
+9780596517748 JavaScript:_The_Good_Parts Douglas Crockford 23 1 CS 20.24
+9781285852744 C++_Programming:_From_Problem_Analysis_to_Program_Design D Malik 5 7 CS 111.21
+9781784398675 Application_Development_with_Qt_Creato Ray Rischpater 10 2 CS 36.49
+9781118823781 C++_All-in-One_For_Dummies John Mueller 4 3 CS 23.75
+9781433110818 Computer-Mediated_Communication_in_Personal_Relationships Kevin Wright 9 1 CS 34.67
+9781305116634 Data_Communications_and_Computer_Networks:_A_Business_User's_Approach Curt White 15 8 CS 78.90
+9780321884497 Database_Design_for_Mere_Mortals:_A_Hands-On_Guide_to_Relational_Database_Design Michael Hernandez 33 3 CS 54.99
+9781285196145 Database_Systems:_Design,_Implementation,_&_Management Carlos_Coronel 55 11 CS 89.99
+9780133544626 Database_Concepts David Kroenke 0 7 CS 6.30
+9781118907443 Web_Design_with_HTML,_CSS,_JavaScript_and_jQuery_Set Jon Duckett 67 1 CS 58.00
+9781285196145 Database_Systems:_Design,_Implementation,_&_Management Carlos Coronel 12 11 CS 89.99
+9780134076423 Computer_Science:_An_Interdisciplinary_Approach Robert Sedgewick 89 1 CS 67.19
+9780201100884 Compilers:_Principles,_Techniques,_and_Tools Alfred Aho 33 1 CS 25.00
+9780262032933 Introduction_to_Algorithms Thomas Cormen 33 2 CS 29.99
+9780999685907 The_Self-Taught_Programmer:_The_Definitive_Guide_to_Programming_Professionally Cory Althoff 3 1 CS 15.17
+9780133760064 Computer_Science:_An_Overview Glenn Brookshear 32 12 CS 159.79
+9780262510875 Structure_and_Interpretation_of_Computer_Programs Harold Abelson 22 2 CS 40.97
+9781590282410 Python_Programming:_An_Introduction_to_Computer_Science John Zelle 1 2 CS 19.99
+9781250118363 Algorithms_to_Live_By:_The_Computer_Science_of_Human_Decisions Brian Christian 12 3 CS 9.98
+9790692106715 Computer_Science_Principles:_The_Foundational_Concepts_of_Computer_Science Kevin Hare 4 2 CS 11.39
+9780789749840 How_Computers_Work:_The_Evolution_of_Technology Ron White 2 10 CS 28.76 
+9780486404530 Calculus:_An_Intuitive_and_Physical_Approach Morris Kline 2 2 Math 21.05
+9780966621198 Introduction_to_the_Practice_of_Statistics David Moore 3 8 Math 131.47
+9780073525310 Genetics:_From_Genes_to_Genomes Leland Hartwell 1 5 Biology 70.00
+9781464120275 Organic_Chemistry:_Structure_and_Function Peter Vollhardt 1 7 Chemistry 111.00
+9780321919052 Introductory_Chemistry_Essentials Nivaldo Tro 4 5 Chemistry 24.98
+9780321696625 A_Guide_to_the_Natural_World David Krogh 2 5 Biology 43.59
+9780321836960 Rementary_Statistics Mario Triola 1 12 Math 13.99
+9780538497909 Calculus:_Early_Transcendentals James Stewwart 5 7 Math 169.90
+9780321910417 Chemistry:_The_Central_Science Theodre Brown 2 13 Chemistry 252.98
+9781133533467 Algebra_and_Trigonometry Lothar Redlin 1 3 Math 14.92
+9780470894521 Mathematical_Mindsets:_Unleashing_Students'_Potential_through_Creative_Math,_Inspiring_Messages_and_Innovative_Teaching Jo Boaler 2 1 Math 12.93
+9780321558237 Campbell_Biology Jane Reece 3 9 Biology 20.26
+9780077837273 Zoology Stephen Miller 4 10 Biology 123.29
+9780073369440 Stern's_Introductory_Plant_Biology James Bidlack 10 13 Biology 81.00
+9780073524252 Animal_Diversity Cleveland Hickman 9 7 Biology 165.66
+9783319573533 Math_for_Scientists:_Refreshing_the_Essentials Natasha Maurits 4 1 Math 28.86
+9780756682347 The_Human_Body_Coloring_Book DK Publishing 1 1 Biology 14.53
+9781119358718 Mindset_Mathematics:_Visualizing_and_Investigating_Big_Ideas,_Grade_5 Jo Boaler 5 1 Math 19.37
+9789814730037 Mathematics_Problem-Solving_Challenges_for_Secondary_School_Students_and_Beyond David Linker 3 1 Math 28.00
+9780984362998 No-Nonsense_Algebra:_Part_of_the_Mastering_Essential_Math_Skills_Series Richard Fisher 6 1 Math 32.61
