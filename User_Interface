@@ -1,0 +1,103 @@
+#include "stdafx.h"
+#include<fstream>
+#include <iostream>
+using namespace std;
+
+//creating function prototype
+void admin_interface();
+void customer_interface();
+
+   //function for entering into the program
+void user_interface()
+{
+	int choice;
+	do
+	{
+		cout << "................     Welcome to Phoenix Book Store            ..............." << endl;
+		cout << "............................................................................." << endl;
+		cout << "............................................................................." << endl;
+		cout << endl << endl;
+		cout << "YOU WANT TO ENTER THE STORE AS " << endl;
+		cout << "1. ADMIN" << endl;
+		cout << "2. CUSTOMER" << endl;
+		cout << "3. EXIT" << endl;
+		cout << "Enter your choice" << endl;
+		cin >> choice;
+		switch (choice)
+		{
+		case 1:admin_interface();
+			break;
+		case 2:customer_interface();
+			break;
+		case 3:
+			break;
+		}
+	} while (choice != 3);
+}
+
+void admin_interface(){
+	int ch;
+	do	{
+		cout << "WHICH OPERATION DO YOU WANT TO PERFORM ?" << endl << endl;
+		cout << " 1.     Manage books" << endl;
+		cout << " 2.     Manage orders" << endl;
+		cout << " 3.     Manage customers" << endl;
+		cout << " 4.     Exit" << endl;
+		cout << "Enter your choice" << endl;
+		cin >> ch;
+		switch (ch)		{
+			
+			//manage books
+		case 1: 
+			
+			break;
+		case 2:
+
+			break;
+		case 3:
+
+			break;
+		case 4:
+			break;
+		}
+	} while (ch != 4);
+}
+
+void customer_interface() {
+	int ch;
+	do {
+		cout << "WHICH OPERATION DO YOU WANT TO PERFORM ?" << endl << endl;
+		cout << " 1.     Search books" << endl;
+		cout << " 2.     List books by category" << endl;
+		cout << " 3.     Creat an account" << endl;
+		cout << " 4.     Login" << endl;
+		cout << " 5.     Exit" << endl;
+		cout << "Enter your choice" << endl;
+		cin >> ch;
+		switch (ch) {
+
+		case 1:
+
+			break;
+		case 2:
+
+			break;
+		case 3:
+
+			break;
+		case 4:
+
+			break;
+		case 5:
+			break;
+		}
+	} while (ch != 5);
+}
+
+//creating function main()
+void main(){
+
+	user_interface();
+	//system("pause");
+
+}
