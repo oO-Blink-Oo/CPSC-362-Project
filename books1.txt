@@ -1,24 +1,24 @@
-9780590353403 Harry_Potter_And_The_Sorcerer's_Stone J.K Rowling 34 1 fantasy 14.52
+9780590353403 Harry_Potter_And_The_Sorcerer’s_Stone J.K Rowling 34 1 fantasy 14.52
 9780439064866 Harry_Potter_and_the_Chamber_of_Secrets J.K Rowling 3 1 fantasy 14.69
 9780395489314 The_Fellowship_of_the_Ring J.R Tolkien 10 1 fantasy 16.93
 9780547928227 The_Hobbit J.R.R Tolkien 3 7 fantasy 10.63
 9780547928203 The_Two_Towers J.R.R Tolkien 1 3 fantasy 17.05
 9780553582024 A_Feast_For_Crows George Martin 1 66 fantasy 19.59
 9780290204890 Batman:_Year_One Frank Miller 1 88 fantasy 10.19
-9781401216672 Batman:_The_Killing_Joke Alan_Moore 1 100 fantasy 14.13
+9781401216672 Batman:_The_Killing_Joke Alan Moore 1 100 fantasy 14.13
 9781984355331 The_Jungle_Book Rudyard Kipling 1 74 fantasy 3.99
-9780141331645 Pinocchio Carlo_Collodi 5 84 fantasy 5.99
+9780141331645 Pinocchio Carlo Collodi 5 84 fantasy 5.99
 9781420952483 Peter_Pan J.M Barrie 1 45 fantasy 5.99
 9780486291161 The_Wonderful_Wizard_Of_Oz Frank Baum 1 62 fantasy 9.95
 9781721968558 Around_The_World_in_80_Days Jules Verne 6 50 fantasy 12.99
-9781840226249 The_Mysterious_Island Jules_Verne 1 12 fantasy 24.99
+9781840226249 The_Mysterious_Island Jules Verne 1 12 fantasy 24.99
 9780486440880 Journey_To_The_Center_Of_The_Earth Jules Verne 13 64 fantasy 9.95
 9781514650462 Treasure_Island Robert Stevenson 2 15 fantasy 6.80
-978043913960 Harry_Potter_And_The_Goblet_Of_Fire J.K Rowling 2 123 fantasy 9.78
+9780439139602 Harry_Potter_And_The_Goblet_Of_Fire J.K Rowling 2 123 fantasy 9.78
 9780439358071 Harry_Potter_And_The_Order_Of_The_Phoenix J.K Rowling 3 116 fantasy 9.49
 9780545139700 Harry_Potter_And_The_Deathly_Hallows J.K Rowling 7 118 fantasy 10.49
 9780078022128 Software_Engineering:_A_Practitioner's_Approach Roger Pressman 100 8 CS 119.95
-9780134494166 Clean Architecture:_A_Craftsman's_Guide_to_Software_Structure_and_Design Robert Martin 87 1 CS 30.82
+9780134494166 Clean_Architecture:_A_Craftsman's_Guide_to_Software_Structure_and_Design Robert Martin 87 1 CS 30.82
 9780596517748 JavaScript:_The_Good_Parts Douglas Crockford 23 1 CS 20.24
 9781285852744 C++_Programming:_From_Problem_Analysis_to_Program_Design D Malik 5 7 CS 111.21
 9781784398675 Application_Development_with_Qt_Creato Ray Rischpater 10 2 CS 36.49
@@ -26,7 +26,7 @@
 9781433110818 Computer-Mediated_Communication_in_Personal_Relationships Kevin Wright 9 1 CS 34.67
 9781305116634 Data_Communications_and_Computer_Networks:_A_Business_User's_Approach Curt White 15 8 CS 78.90
 9780321884497 Database_Design_for_Mere_Mortals:_A_Hands-On_Guide_to_Relational_Database_Design Michael Hernandez 33 3 CS 54.99
-9781285196145 Database_Systems:_Design,_Implementation,_&_Management Carlos_Coronel 55 11 CS 89.99
+9781285196145 Database_Systems:_Design,_Implementation,_&_Management Carlos Coronel 55 11 CS 89.99
 9780133544626 Database_Concepts David Kroenke 0 7 CS 6.30
 9781118907443 Web_Design_with_HTML,_CSS,_JavaScript_and_jQuery_Set Jon Duckett 67 1 CS 58.00
 9781285196145 Database_Systems:_Design,_Implementation,_&_Management Carlos Coronel 12 11 CS 89.99
@@ -50,7 +50,7 @@
 9780538497909 Calculus:_Early_Transcendentals James Stewwart 5 7 Math 169.90
 9780321910417 Chemistry:_The_Central_Science Theodre Brown 2 13 Chemistry 252.98
 9781133533467 Algebra_and_Trigonometry Lothar Redlin 1 3 Math 14.92
-9780470894521 Mathematical_Mindsets:_Unleashing_Students'_Potential_through_Creative_Math,_Inspiring_Messages_and_Innovative_Teaching Jo Boaler 2 1 Math 12.93
+9780470894521 Mathematical_Mindsets Jo Boaler 2 1 Math 12.93
 9780321558237 Campbell_Biology Jane Reece 3 9 Biology 20.26
 9780077837273 Zoology Stephen Miller 4 10 Biology 123.29
 9780073369440 Stern's_Introductory_Plant_Biology James Bidlack 10 13 Biology 81.00
