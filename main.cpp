@@ -7,12 +7,14 @@
 #include <vector>
 #include <algorithm>
 #include <functional>
+#include <iterator>
 
 //#include <initializer_list>
 
 #define ARGC_ERROR 1
 
 #define FILE_ERROR 2
+
 
 
 using namespace std;
@@ -23,43 +25,6 @@ void welcomePrompt();
 void signInPrompt();
 void featureMenu();
 void testlist(int, const char*[]);
-
-//Customer Class
-class customer {
-public:
-	customer(string customerName, double money) : customerName_(customerName), money_(money) {}
-	customer() : customerName_("John"), money_(100) {}
-
-	//FUNCTIONS NEEDED:
-	
-	//1.VIEW SHOPPING CART
-	void viewShoppingCart() {
-
-	}
-	//2. ADD TO SHOPPING CART
-	void addToShoppingCart() {
-
-	}
-	//3. REMOVE FROM SHOPPING CART
-	void removeFromShoppingCart() {
-
-	}
-	//4. SUM THE TOTAL OF THE SHOPPING CART
-	double sumShoppingCart() {
-
-	}
-	//5. SUBTRACT TOTAL SUM OF SHOPPING CART FROM MONEY
-	double totalMoney() {
-
-	}
-	
-private:
-	string customerName_;
-	vector <book> shoppingCart_;
-	vector <double> totalOfShoppingCart_;
-	double money_;
-};
-
 
 struct author {
 
@@ -181,6 +146,63 @@ struct book {
 
 
 };
+
+
+//Customer Class
+class customer {
+public:
+	customer(string customerName, double money) : customerName_(customerName), money_(money) {}
+	customer() : customerName_("John"), money_(1000) {}
+	customer(string customerName) : customerName_(customerName), money_(1000) {}
+
+	//FUNCTIONS NEEDED:
+
+	//1.VIEW SHOPPING CART
+	void viewShoppingCart() {
+
+		vector <string>::iterator it = shoppingCart_.begin();
+		cout << this->customerName_ << ", your shopping cart has: \n";
+		for (it; it != shoppingCart_.end(); it++) {
+			
+			cout << *it << "\n";
+		
+		}
+	}
+
+	//2. ADD TO SHOPPING CART
+	void addToShoppingCart(string item) {//parameter should be the item to be added in the vector
+		
+		shoppingCart_.push_back(item);
+	
+	}
+
+	//3. REMOVE FROM SHOPPING CART
+	void removeFromShoppingCart(int n) {
+	
+		shoppingCart_.erase(shoppingCart_.begin() + (n-1));
+	
+	}
+
+	//4. SUM THE TOTAL OF THE SHOPPING CART  //NEEDS TO BE IMPLEMENTED STILL
+	double sumShoppingCart() {
+		
+	}
+
+	//5. SUBTRACT TOTAL SUM OF SHOPPING CART + TAX FROM(-) MONEY //NEEDS TO BE IMPLEMENTED STILL
+	double totalMoney() {
+		//
+	}
+
+private:
+	string customerName_;
+	vector <size_t> trackingNumbers;
+	vector <book> orderHistory;
+	vector <string> shoppingCart_;
+	vector <double> totalOfShoppingCart_;
+	double money_;
+};
+
+
 
 
 
@@ -409,7 +431,20 @@ private:
 
 
 int main(int argc, const char * argv[]) {
-	testlist(argc, argv);
+	customer c1("Georgie");
+	c1.addToShoppingCart("Book1");
+	c1.addToShoppingCart("Book2");
+	c1.addToShoppingCart("Book3");
+	c1.addToShoppingCart("Book4");
+	c1.addToShoppingCart("Book5");
+	c1.viewShoppingCart();
+	c1.removeFromShoppingCart(3);
+	cout << "\nbook3 removed, shopping cart now has . . ." <<endl;
+	c1.viewShoppingCart();
+	c1.removeFromShoppingCart(1);
+	cout << "\nbook1 removed, shopping cart now has . . ." << endl;
+	c1.viewShoppingCart();
+	//testlist(argc, argv);
 	// welcomePrompt();
 
 
@@ -623,4 +658,3 @@ void testlist(int argc, const char* argv[]) {
 	bs.sort_analyze();
 
 }
-
