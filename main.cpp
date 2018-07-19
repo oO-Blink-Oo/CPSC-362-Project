@@ -19,12 +19,17 @@
 
 using namespace std;
 
+//test functions:
+void testlist(int, const char*[]);
+void testCustomer();
+
+//functions:
 void customer_interface();
 void admin_interface();
 void welcomePrompt();
 void signInPrompt();
 void featureMenu();
-void testlist(int, const char*[]);
+
 
 struct author {
 
@@ -163,29 +168,29 @@ public:
 		vector <string>::iterator it = shoppingCart_.begin();
 		cout << this->customerName_ << ", your shopping cart has: \n";
 		for (it; it != shoppingCart_.end(); it++) {
-			
+
 			cout << *it << "\n";
-		
+
 		}
 	}
 
 	//2. ADD TO SHOPPING CART
 	void addToShoppingCart(string item) {//parameter should be the item to be added in the vector
-		
+
 		shoppingCart_.push_back(item);
-	
+
 	}
 
 	//3. REMOVE FROM SHOPPING CART
 	void removeFromShoppingCart(int n) {
-	
-		shoppingCart_.erase(shoppingCart_.begin() + (n-1));
-	
+
+		shoppingCart_.erase(shoppingCart_.begin() + (n - 1));
+
 	}
 
 	//4. SUM THE TOTAL OF THE SHOPPING CART  //NEEDS TO BE IMPLEMENTED STILL
 	double sumShoppingCart() {
-		
+
 	}
 
 	//5. SUBTRACT TOTAL SUM OF SHOPPING CART + TAX FROM(-) MONEY //NEEDS TO BE IMPLEMENTED STILL
@@ -254,8 +259,6 @@ void printrange(const string& msg, pair_range<T>& pr, T val) {
 
 	prwrapper<T> wrap(pr);
 
-
-
 	for (auto el : wrap) { cout << el << "\n"; }
 
 	cout << "\n";
@@ -295,7 +298,6 @@ public:
 		cout << "List of books: \n" << *this << "\n";
 
 
-
 		int sort_choice;
 
 		cout << "\tSort by\n";
@@ -327,7 +329,6 @@ public:
 			break;
 
 
-
 		case 2:
 
 			print_by_selection("title: \n",
@@ -335,7 +336,6 @@ public:
 				[](const book& a, const book& b) {return a.title_ < b.title_; });
 
 			break;
-
 
 
 		case 3:
@@ -347,17 +347,13 @@ public:
 			break;
 
 
-
 		default:
 
 			break;
 
 		}
 
-
-
 	}
-
 
 
 	friend ostream& operator<<(ostream& os, const book_sorting& bs) {
@@ -371,8 +367,6 @@ public:
 		return os;
 
 	}
-
-
 
 private:
 
@@ -429,26 +423,11 @@ private:
 
 
 
-
+//MAIN FUNCTION
 int main(int argc, const char * argv[]) {
-	customer c1("Georgie");
-	c1.addToShoppingCart("Book1");
-	c1.addToShoppingCart("Book2");
-	c1.addToShoppingCart("Book3");
-	c1.addToShoppingCart("Book4");
-	c1.addToShoppingCart("Book5");
-	c1.viewShoppingCart();
-	c1.removeFromShoppingCart(3);
-	cout << "\nbook3 removed, shopping cart now has . . ." <<endl;
-	c1.viewShoppingCart();
-	c1.removeFromShoppingCart(1);
-	cout << "\nbook1 removed, shopping cart now has . . ." << endl;
-	c1.viewShoppingCart();
-	//testlist(argc, argv);
+	//testCustomer();
+	testlist(argc, argv);
 	// welcomePrompt();
-
-
-
 
 	cout << "\nTHANK YOU. SEE YOU AGAIN\n";
 
@@ -456,7 +435,7 @@ int main(int argc, const char * argv[]) {
 
 }
 
-//WELCOM PROMPT
+//WELCOME PROMPT
 void welcomePrompt()
 {
 	//variables used for menu selection
@@ -633,12 +612,10 @@ void customer_interface() {
 	} while (ch != 5);
 }
 
-
-
+//TEST LIST
 void testlist(int argc, const char* argv[]) {
 
 	if (argc != 2) { cerr << "Usage: filename\n";  exit(ARGC_ERROR); }
-
 
 
 	filewrapper fw(argv[1]);
@@ -657,4 +634,22 @@ void testlist(int argc, const char* argv[]) {
 
 	bs.sort_analyze();
 
+}
+
+//TEST CUSTOMER
+void testCustomer()
+{
+	customer c1("Georgie");
+	c1.addToShoppingCart("Book1");
+	c1.addToShoppingCart("Book2");
+	c1.addToShoppingCart("Book3");
+	c1.addToShoppingCart("Book4");
+	c1.addToShoppingCart("Book5");
+	c1.viewShoppingCart();
+	c1.removeFromShoppingCart(3);
+	cout << "\nbook3 removed, shopping cart now has . . ." << endl;
+	c1.viewShoppingCart();
+	c1.removeFromShoppingCart(1);
+	cout << "\nbook1 removed, shopping cart now has . . ." << endl;
+	c1.viewShoppingCart();
 }
