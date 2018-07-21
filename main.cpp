@@ -165,7 +165,7 @@ public:
 	//1.VIEW SHOPPING CART
 	void viewShoppingCart() {
 
-		vector <string>::iterator it = shoppingCart_.begin();
+		vector <book>::iterator it = shoppingCart_.begin();
 		cout << this->customerName_ << ", your shopping cart has: \n";
 		for (it; it != shoppingCart_.end(); it++) {
 
@@ -175,7 +175,7 @@ public:
 	}
 
 	//2. ADD TO SHOPPING CART
-	void addToShoppingCart(string item) {//parameter should be the item to be added in the vector
+	void addToShoppingCart(book item) {//parameter should be the item to be added in the vector
 
 		shoppingCart_.push_back(item);
 
@@ -202,7 +202,7 @@ private:
 	string customerName_;
 	vector <size_t> trackingNumbers;
 	vector <book> orderHistory;
-	vector <string> shoppingCart_;
+	vector <book> shoppingCart_;
 	vector <double> totalOfShoppingCart_;
 	double money_;
 };
@@ -273,9 +273,7 @@ public:
 
 	void add(const book& bk) {
 		bk_.push_back(bk);
-
 	}
-
 
 	void sort_by_selection(const string& msg, function<bool(const book& a, const book& b)> predicate) {
 
@@ -285,7 +283,11 @@ public:
 
 	}
 
-	void print_by_selection(const std::string& msg, std::function<bool(const book& a, const book& b)> predicate) {
+	book pick_book(size_t n) {//function for picking a book from vector of books
+		return bk_[n];
+	}
+
+	void print_by_selection(const std::string& msg, std::function<bool(const book& a, const book& b)> predicate) {//how do we use this? (Chloe)
 
 		sort_by_selection(msg, predicate);
 
@@ -293,10 +295,9 @@ public:
 
 	}
 
-	void sort_analyze() {
+	void sort_analyze() {//SORT THE BOOKS
 
 		cout << "List of books: \n" << *this << "\n";
-
 
 		int sort_choice;
 
@@ -394,7 +395,7 @@ public:
 
 
 
-		cout << "file: " << filename_ << " is open...\n";
+		cout << "file: " << filename_ << " is open...\n\n";
 
 	}
 
@@ -402,7 +403,7 @@ public:
 
 		ifs_.close();
 
-		cout << "file: " << filename_ << " is closed...\n";
+		cout << "file: " << filename_ << " is closed...\n\n";
 
 	}
 
@@ -426,8 +427,28 @@ private:
 //MAIN FUNCTION
 int main(int argc, const char * argv[]) {
 	//testCustomer();
-	testlist(argc, argv);
 	// welcomePrompt();
+	//testlist(argc, argv);
+	
+	if (argc != 2) { cerr << "Usage: filename\n";  exit(ARGC_ERROR); }
+
+	filewrapper fw(argv[1]);
+
+	book bk;
+
+	book_sorting bs;//This class object has the vector of books and functions to sort it
+
+	while (fw >> bk) {
+
+		bs.add(bk);
+
+	}
+	customer c1;
+	c1.addToShoppingCart(bs.pick_book(0));
+	c1.viewShoppingCart();
+	//bs.print_by_selection();
+
+	/*bs.sort_analyze();*/
 
 	cout << "\nTHANK YOU. SEE YOU AGAIN\n";
 
@@ -576,7 +597,7 @@ void admin_interface() {
 }
 
 //CUSTOMER INTERFACE
-void customer_interface() {
+void customer_interface(customer &customer, book_sorting books) {//edited
 	int ch;
 	do {
 		cout << "\t\t\tWHICH OPERATION DO YOU WANT TO PERFORM ?" << endl << endl;
@@ -637,19 +658,19 @@ void testlist(int argc, const char* argv[]) {
 }
 
 //TEST CUSTOMER
-void testCustomer()
-{
-	customer c1("Georgie");
-	c1.addToShoppingCart("Book1");
-	c1.addToShoppingCart("Book2");
-	c1.addToShoppingCart("Book3");
-	c1.addToShoppingCart("Book4");
-	c1.addToShoppingCart("Book5");
-	c1.viewShoppingCart();
-	c1.removeFromShoppingCart(3);
-	cout << "\nbook3 removed, shopping cart now has . . ." << endl;
-	c1.viewShoppingCart();
-	c1.removeFromShoppingCart(1);
-	cout << "\nbook1 removed, shopping cart now has . . ." << endl;
-	c1.viewShoppingCart();
-}
+//void testCustomer()
+//{
+//	customer c1("Georgie");
+//	c1.addToShoppingCart("Book1");
+//	c1.addToShoppingCart("Book2");
+//	c1.addToShoppingCart("Book3");
+//	c1.addToShoppingCart("Book4");
+//	c1.addToShoppingCart("Book5");
+//	c1.viewShoppingCart();
+//	c1.removeFromShoppingCart(3);
+//	cout << "\nbook3 removed, shopping cart now has . . ." << endl;
+//	c1.viewShoppingCart();
+//	c1.removeFromShoppingCart(1);
+//	cout << "\nbook1 removed, shopping cart now has . . ." << endl;
+//	c1.viewShoppingCart();
+//}
