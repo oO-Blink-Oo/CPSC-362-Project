@@ -597,7 +597,7 @@ void admin_interface() {
 }
 
 //CUSTOMER INTERFACE
-void customer_interface(customer &customer, book_sorting books) {//edited
+void customer_interface() {//edited
 	int ch;
 	do {
 		cout << "\t\t\tWHICH OPERATION DO YOU WANT TO PERFORM ?" << endl << endl;
