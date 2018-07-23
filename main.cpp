@@ -28,7 +28,8 @@ void customer_interface();
 void admin_interface();
 void welcomePrompt();
 void signInPrompt();
-void featureMenu();
+void support();
+void featureMenu();//not used
 
 
 struct author {
@@ -403,7 +404,7 @@ public:
 
 		ifs_.close();
 
-		cout << "file: " << filename_ << " is closed...\n\n";
+		cout << "\nfile: " << filename_ << " is closed...\n\n";
 
 	}
 
@@ -421,36 +422,34 @@ private:
 
 };
 
-
-
+//GLOBAL VARIABLE
+book_sorting bs;//This class object has the vector of books and functions to sort it
 
 //MAIN FUNCTION
 int main(int argc, const char * argv[]) {
 	//testCustomer();
-	// welcomePrompt();
+	 
 	//testlist(argc, argv);
-	
+//testing shopping cart
+	/*customer c1;
+	c1.addToShoppingCart(bs.pick_book(0));
+	c1.viewShoppingCart();*/
+	//bs.print_by_selection();
+
+	/*bs.sort_analyze();*/
+
 	if (argc != 2) { cerr << "Usage: filename\n";  exit(ARGC_ERROR); }
 
 	filewrapper fw(argv[1]);
 
 	book bk;
 
-	book_sorting bs;//This class object has the vector of books and functions to sort it
-
 	while (fw >> bk) {
-
 		bs.add(bk);
-
 	}
-	customer c1;
-	c1.addToShoppingCart(bs.pick_book(0));
-	c1.viewShoppingCart();
-	//bs.print_by_selection();
 
-	/*bs.sort_analyze();*/
-
-	cout << "\nTHANK YOU. SEE YOU AGAIN\n";
+	welcomePrompt();
+	cout << "\n\t\t\tTHANK YOU. SEE YOU AGAIN\n";
 
 	return 0;
 
@@ -464,7 +463,7 @@ void welcomePrompt()
 	char choice;
 
 	cout << "\t\t\tWelcome to Phoenix Book Store!\n";
-	cout << "\t\t1. Sign in" << endl;
+	cout << "\t\t1. Sign in(This feature is not available in this current version.)" << endl;
 	cout << "\t\t2. Guest\n\t\t";
 	cin >> signInChoice;
 	while (signInChoice != 1 && signInChoice != 2) {
@@ -537,7 +536,7 @@ void signInPrompt() {
 		if (accountAnswer == 'n') {
 
 			cout << "Continuing as guest. . .\n";
-			featureMenu();//show features menu
+			customer_interface();//show features menu
 
 		}
 		else {
@@ -551,17 +550,24 @@ void signInPrompt() {
 
 }
 
-//FEATURE MENU
-void featureMenu() {
-	cout << setw(50) << "Please select from the menu:\n";
-	cout << setw(50) << "1. Search and pick a book\n" //searching for book should ask user if they want to search through ISBN, Title or Author, once found user is asked if what to do next; order, view more
-
-		<< setw(63) << "2. Display ALL of the books available.\n"//prompt user what to do next; search and pick frmo the displayed selection
-
-		<< setw(52) << "3. Contact Customer Support\n"//outputs customer support email and number
-		<< setw(32) << "4. Exit\n";
-
+void support()
+{
+	cout << "\n\t\t\tCustomer Support:\n";
+	cout << "\t\t\t\tPhone number: 1 (800) 555-555";
+	cout << "\n\t\t\t\tEmail: uNeedHelp@weGotyou.net\n\n";
 }
+
+//FEATURE MENU
+//void featureMenu() {
+//	cout << setw(50) << "Please select from the menu:\n";
+//	cout << setw(50) << "1. Search and pick a book\n" //searching for book should ask user if they want to search through ISBN, Title or Author, once found user is asked if what to do next; order, view more
+//
+//		<< setw(63) <<  "2. View shopping cart\n"//prompt user what to do next; search and pick frmo the displayed selection
+//
+//		<< setw(52) <<  "3. Contact Customer Support\n"//outputs customer support email and number
+//		<< setw(32) <<  "4. Exit\n";
+//
+//}
 
 void admin_interface() {
 	int ch;
@@ -599,16 +605,18 @@ void admin_interface() {
 //CUSTOMER INTERFACE
 void customer_interface() {//edited
 	int ch;
+	
 	do {
 		cout << "\t\t\tWHICH OPERATION DO YOU WANT TO PERFORM ?" << endl << endl;
-		cout << " \t\t1.     Search books" << endl;
-		cout << " \t\t2.     List books by category" << endl;
-		cout << " \t\t3.     Creat an account" << endl;
-		cout << " \t\t4.     Login" << endl;
-		cout << " \t\t5.     Exit" << endl;
+		cout << " \t\t1.     Search for book(s)" << endl;
+		cout << " \t\t2.     View Shopping Cart" << endl;
+		cout << " \t\t3.     Create an account\t(N/A in this version)" << endl;
+		cout << " \t\t4.     Login\t\t\t(N/A in this version)" << endl;
+		cout << " \t\t5.     Contact customer support" << endl;
+		cout << " \t\t6.     Exit" << endl;
 		cout << "\t\tEnter your choice: ";
 		cin >> ch;
-		while (ch != 1 && ch != 2 && ch != 3 && ch != 4 && ch != 5)
+		while (ch != 1 && ch != 2 && ch != 3 && ch != 4 && ch != 5 && ch != 6)
 		{
 			cout << "\t\tPlease input a valid answer: ";
 			cin >> ch;
@@ -622,12 +630,17 @@ void customer_interface() {//edited
 
 			break;
 		case 3:
-
+			cout << "\t\t\tFEATURE NOT AVAILABLE IN THIS CURRENT VERSION\n";
 			break;
 		case 4:
-
+			cout << "\t\t\tFEATURE NOT AVAILABLE IN THIS CURRENT VERSION\n";
 			break;
 		case 5:
+			//call customer support function
+			support();
+			break;
+		case 6:
+			cout << "Exiting. . .\n";
 			break;
 		}
 	} while (ch != 5);
