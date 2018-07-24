@@ -30,6 +30,7 @@ void welcomePrompt();
 void signInPrompt();
 void support();
 void featureMenu();//not used
+void search_interface();
 
 
 struct author {
@@ -370,12 +371,35 @@ public:
 
 	}
 
+	void search_interface()
+	{
+		int user_choice;
+		cout << "\n\t\t\tSearch by:\n"
+			<< "\t\t\t\t1. ISBN\n"
+			<< "\t\t\t\t2. Title\n"
+			<< "\t\t\t\t3. Author\n"
+			<< "\t\t\t\t4. Category\n"
+			<< "\t\t\t\t5. Exit\n";
+		cin >> user_choice;
+
+		do {
+			switch (user_choice) {
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			};
+		} while (user_choice != 5);
+	}
 private:
 
 	vector<book> bk_;
-
-
-
 };
 
 //-----------------------------------------
@@ -422,7 +446,7 @@ private:
 
 };
 
-//GLOBAL VARIABLE
+/////////////////////////////////////////////////////////////////////////////////////////GLOBAL VARIABLE/////////////////////////////////////////////////////////////////////////
 book_sorting bs;//This class object has the vector of books and functions to sort it
 
 				//MAIN FUNCTION
@@ -557,6 +581,8 @@ void support()
 	cout << "\n\t\t\t\tEmail: uNeedHelp@weGotyou.net\n\n";
 }
 
+
+
 //FEATURE MENU
 //void featureMenu() {
 //	cout << setw(50) << "Please select from the menu:\n";
@@ -624,7 +650,7 @@ void customer_interface() {//edited
 		switch (ch) {
 
 		case 1:
-			bs.sort_analyze();
+			bs.search_interface();
 			break;
 		case 2:
 
@@ -643,7 +669,7 @@ void customer_interface() {//edited
 			cout << "Exiting. . .\n";
 			break;
 		}
-	} while (ch != 6 );
+	} while (ch != 6);
 }
 
 //TEST LIST
