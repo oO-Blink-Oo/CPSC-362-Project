@@ -364,16 +364,31 @@ public:
 		if (bs.bk_.empty()) { return os << "empty\n"; }
 
 
+		for (int i = 0; i < bs.bk_.size(); i++) {
+			os << i << " " << bs.bk_[i] << "\n";
+		}
 
-		for (auto el : bs.bk_) { os << el << "\n"; }
+		//for (auto el : bs.bk_) { os << el << "\n"; }//index here
 
 		return os;
 
 	}
 
+	void printBooks() {
+
+		vector <book>::iterator it = searchedList.begin();
+		int counter = 1;
+		for (it; it != searchedList.end(); it++) {
+
+			cout << counter <<*it << "\n";
+			counter++;
+		}
+	}
 	void search_interface()
 	{
 		int user_choice;
+		string firstName, lastName;
+		author temp(firstName, lastName);
 		cout << "\n\t\t\tSearch by:\n"
 			<< "\t\t\t\t1. ISBN\n"
 			<< "\t\t\t\t2. Title\n"
@@ -388,7 +403,25 @@ public:
 				break;
 			case 2:
 				break;
-			case 3:
+			case 3://AUTHOR
+				cout << "Input author's firstName and last name <firstName>_<lastName>: ";
+				cin >> firstName;
+				cin >> lastName;
+				
+				cout << "\n Books by this author is(are): \n";
+				//clear vector first
+				searchedList.clear();
+				
+				for (int i = 0; i < bk_.size(); i++) {
+					
+					if (bk_[i].author_.lname_ == lastName && bk_[i].author_.fname_ == firstName) {
+						//cout << i << ".) ";
+						searchedList.push_back(bk_[i]);
+						
+						//cout << searchedList[i] << endl;
+					}
+				}
+				printBooks();
 				break;
 			case 4:
 				break;
@@ -398,7 +431,7 @@ public:
 		} while (user_choice != 5);
 	}
 private:
-
+	vector<book> searchedList;
 	vector<book> bk_;
 };
 
@@ -449,27 +482,18 @@ private:
 /////////////////////////////////////////////////////////////////////////////////////////GLOBAL VARIABLE/////////////////////////////////////////////////////////////////////////
 book_sorting bs;//This class object has the vector of books and functions to sort it
 
-				//MAIN FUNCTION
+				/*********************************///MAIN FUNCTION///***********************************************************/
 int main(int argc, const char * argv[]) {
-	//testCustomer();
-
-	//testlist(argc, argv);
-	//testing shopping cart
-	/*customer c1;
-	c1.addToShoppingCart(bs.pick_book(0));
-	c1.viewShoppingCart();*/
-	//bs.print_by_selection();
-
-	/*bs.sort_analyze();*/
 
 	if (argc != 2) { cerr << "Usage: filename\n";  exit(ARGC_ERROR); }
 
 	filewrapper fw(argv[1]);
 
 	book bk;
-
+	int counter = 0;
 	while (fw >> bk) {
 		bs.add(bk);
+		counter++;
 	}
 
 	welcomePrompt();
