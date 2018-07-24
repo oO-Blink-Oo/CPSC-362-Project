@@ -425,12 +425,12 @@ private:
 //GLOBAL VARIABLE
 book_sorting bs;//This class object has the vector of books and functions to sort it
 
-//MAIN FUNCTION
+				//MAIN FUNCTION
 int main(int argc, const char * argv[]) {
 	//testCustomer();
-	 
+
 	//testlist(argc, argv);
-//testing shopping cart
+	//testing shopping cart
 	/*customer c1;
 	c1.addToShoppingCart(bs.pick_book(0));
 	c1.viewShoppingCart();*/
@@ -605,7 +605,7 @@ void admin_interface() {
 //CUSTOMER INTERFACE
 void customer_interface() {//edited
 	int ch;
-	
+
 	do {
 		cout << "\t\t\tWHICH OPERATION DO YOU WANT TO PERFORM ?" << endl << endl;
 		cout << " \t\t1.     Search for book(s)" << endl;
@@ -624,7 +624,7 @@ void customer_interface() {//edited
 		switch (ch) {
 
 		case 1:
-
+			bs.sort_analyze();
 			break;
 		case 2:
 
@@ -643,7 +643,7 @@ void customer_interface() {//edited
 			cout << "Exiting. . .\n";
 			break;
 		}
-	} while (ch != 5);
+	} while (ch != 6 );
 }
 
 //TEST LIST
