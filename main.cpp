@@ -158,51 +158,6 @@ struct book {
 //Customer Class
 class customer {
 public:
-<<<<<<< HEAD
-	customer(string customerName, double money) : customerName_(customerName), money_(money) {}
-	customer() : customerName_("John"), money_(1000) {}
-	customer(string customerName) : customerName_(customerName), money_(1000) {}
-
-	//FUNCTIONS NEEDED:
-	friend class book_sorting;
-
-	//1.VIEW SHOPPING CART
-	void viewShoppingCart() {
-
-		vector <book>::iterator it = shoppingCart_.begin();
-		cout << this->customerName_ << ", your shopping cart has: \n";
-		for (it; it != shoppingCart_.end(); it++) {
-
-			cout << *it << "\n";
-
-		}
-	}
-
-	//2. ADD TO SHOPPING CART
-	void addToShoppingCart(book item) {//parameter should be the item to be added in the vector
-		cout << endl;
-		shoppingCart_.push_back(item);
-		viewShoppingCart();
-	}
-
-	//3. REMOVE FROM SHOPPING CART
-	void removeFromShoppingCart(int n) {
-
-		shoppingCart_.erase(shoppingCart_.begin() + (n - 1));
-
-	}
-
-	//    //4. SUM THE TOTAL OF THE SHOPPING CART  //NEEDS TO BE IMPLEMENTED STILL
-	//    double sumShoppingCart() {
-	//        
-	//    }
-	//    
-	//    //5. SUBTRACT TOTAL SUM OF SHOPPING CART + TAX FROM(-) MONEY //NEEDS TO BE IMPLEMENTED STILL
-	//    double totalMoney() {
-	//        //
-	//    }
-
-=======
     customer(string customerName, double money) : customerName_(customerName), money_(money) {}
     customer() : customerName_("John"), money_(1000) {}
     customer(string customerName) : customerName_(customerName), money_(1000) {}
@@ -246,7 +201,6 @@ public:
 //        //
 //    }
     
->>>>>>> 7608926919a2b3dee167355c36f4c153702f71e9
 private:
     string customerName_;
     vector <size_t> trackingNumbers;
@@ -319,191 +273,6 @@ void printrange(const string& msg, pair_range<T>& pr, T val) {
 class book_sorting {
     
 public:
-<<<<<<< HEAD
-
-	void add(const book& bk) {
-		bk_.push_back(bk);
-	}
-
-	void sort_by_selection(const string& msg, function<bool(const book& a, const book& b)> predicate) {
-
-		cout << "sorting by: " << msg;
-
-		sort(bk_.begin(), bk_.end(), predicate);
-
-	}
-
-	book pick_book(size_t n) {//function for picking a book from vector of books
-		return searchedList_[n];
-	}
-
-	void print_by_selection(const std::string& msg, std::function<bool(const book& a, const book& b)> predicate) {//how do we use this? (Chloe)
-
-		sort_by_selection(msg, predicate);
-
-		cout << *this << "\n";
-
-	}
-
-	void sort_analyze() {//SORT THE BOOKS
-
-		cout << "List of books: \n" << *this << "\n";
-
-		int sort_choice;
-
-		cout << "\tSort by\n";
-
-		cout << "\t1. Price" << endl;
-
-		cout << "\t2. Title" << endl;
-
-		cout << "\t3. Category" << endl;
-
-		cin >> sort_choice;
-
-		while (sort_choice != 1 && sort_choice != 2 && sort_choice != 3) {
-
-			cout << "Please input a valid number: ";
-
-			cin >> sort_choice;
-
-		}
-
-		switch (sort_choice) {
-
-		case 1:
-
-			print_by_selection("price: \n",
-
-				[](const book& a, const book&b) {return a.price_ < b.price_; });
-
-			break;
-
-
-		case 2:
-
-			print_by_selection("title: \n",
-
-				[](const book& a, const book& b) {return a.title_ < b.title_; });
-
-			break;
-
-
-		case 3:
-
-			print_by_selection("category: \n",
-
-				[](const book& a, const book& b) {return a.category_ < b.category_; });
-
-			break;
-
-
-		default:
-
-			break;
-
-		}
-
-	}
-
-
-	friend ostream& operator<<(ostream& os, const book_sorting& bs) {
-
-		if (bs.bk_.empty()) { return os << "empty\n"; }
-
-
-		for (int i = 0; i < bs.bk_.size(); i++) {
-			os << i << " " << bs.bk_[i] << "\n";
-		}
-
-		//for (auto el : bs.bk_) { os << el << "\n"; }//index here
-
-		return os;
-
-	}
-
-	void printBooks() {
-
-		vector <book>::iterator it = searchedList_.begin();
-		int counter = 0;
-		for (it; it != searchedList_.end(); it++) {
-
-			cout << counter << ".) " << *it << "\n";
-			counter++;
-		}
-	}
-
-	//ORDER INTERFACE//
-	void order_interface() {
-		int user_choice;
-
-		cout << "Please select book to order: ";
-		cin >> user_choice;
-		guest_customer.addToShoppingCart(searchedList_[user_choice]);
-	}
-
-	void search_interface()
-	{
-		int user_choice;
-		string firstName, lastName;
-		size_t ISBN;
-		author temp(firstName, lastName);
-		cout << "\n\t\t\tSearch by:\n"
-			<< "\t\t\t\t1. ISBN\n"//chloe
-			<< "\t\t\t\t2. Title\n"//xiaomei
-			<< "\t\t\t\t3. Author\n"//ian
-			<< "\t\t\t\t4. Category\n"
-			<< "\t\t\t\t5. Exit\n";
-		cin >> user_choice;
-
-		//do {
-		switch (user_choice) {
-		case 1://ISBN
-			cout << "Input ISBN: ";
-			cin >> ISBN;
-			cout << "\nBook by this ISBN is: \n";
-			searchedList_.clear();
-			for (int i = 0; i < bk_.size(); i++) {
-				if (bk_[i].isbn_ == ISBN) {
-					searchedList_.push_back(bk_[i]);
-				}
-			}
-			printBooks();
-			order_interface();
-			break;
-		case 2:
-
-			break;
-		case 3://AUTHOR
-			cout << "Input author's firstName and last name <firstName>_<lastName>: ";
-			cin >> firstName;
-			cin >> lastName;
-
-			cout << "\n Books by this author is(are): \n";
-			//clear vector first
-			searchedList_.clear();
-
-			//used to populate vector used for the searched books
-			for (int i = 0; i < bk_.size(); i++) {
-
-				if (bk_[i].author_.lname_ == lastName && bk_[i].author_.fname_ == firstName) {
-					searchedList_.push_back(bk_[i]);
-				}
-			}
-			printBooks();
-			order_interface();
-			break;
-		case 4:
-			break;
-		case 5:
-			break;
-		};
-		//} while (user_choice != 5);
-	}
-	void viewShoppingCart() {
-		guest_customer.viewShoppingCart();
-	}
-=======
     
     void add(const book& bk) {
         bk_.push_back(bk);
@@ -710,7 +479,6 @@ public:
         };
         //} while (user_choice != 5);
     }
->>>>>>> 7608926919a2b3dee167355c36f4c153702f71e9
 private:
     customer guest_customer;
     vector<book> searchedList_;
@@ -768,27 +536,6 @@ book_sorting bs;//This class object has the vector of books and functions to sor
 
 /*********************************///MAIN FUNCTION///***********************************************************/
 int main(int argc, const char * argv[]) {
-<<<<<<< HEAD
-
-	if (argc != 2) { cerr << "Usage: filename\n";  exit(ARGC_ERROR); }
-
-	filewrapper fw(argv[1]);
-
-	book bk;
-
-	int counter = 0;
-	while (fw >> bk) {
-		bs.add(bk);
-		counter++;
-	}
-
-	welcomePrompt();
-	//guestCustomer.viewShoppingCart();
-	cout << "\n\t\t\tTHANK YOU. SEE YOU AGAIN\n";
-
-	return 0;
-
-=======
     
     if (argc != 2) { cerr << "Usage: filename\n";  exit(ARGC_ERROR); }
     
@@ -808,7 +555,6 @@ int main(int argc, const char * argv[]) {
     
     return 0;
     
->>>>>>> 7608926919a2b3dee167355c36f4c153702f71e9
 }
 
 //WELCOME PROMPT
@@ -948,48 +694,6 @@ void admin_interface() {
 
 //CUSTOMER INTERFACE
 void customer_interface() {//edited
-<<<<<<< HEAD
-	int ch;
-
-	do {
-		cout << "\t\t\tWHICH OPERATION DO YOU WANT TO PERFORM ?" << endl << endl;
-		cout << " \t\t1.     Search for book(s)" << endl;
-		cout << " \t\t2.     View Shopping Cart" << endl;
-		cout << " \t\t3.     Create an account\t(N/A in this version)" << endl;
-		cout << " \t\t4.     Login\t\t\t(N/A in this version)" << endl;
-		cout << " \t\t5.     Contact customer support" << endl;
-		cout << " \t\t6.     Exit" << endl;
-		cout << "\t\tEnter your choice: ";
-		cin >> ch;
-		while (ch != 1 && ch != 2 && ch != 3 && ch != 4 && ch != 5 && ch != 6)
-		{
-			cout << "\t\tPlease input a valid answer: ";
-			cin >> ch;
-		}
-		switch (ch) {
-
-		case 1:
-			bs.search_interface();
-			break;
-		case 2:
-			bs.viewShoppingCart();
-			break;
-		case 3:
-			cout << "\t\t\tFEATURE NOT AVAILABLE IN THIS CURRENT VERSION\n";
-			break;
-		case 4:
-			cout << "\t\t\tFEATURE NOT AVAILABLE IN THIS CURRENT VERSION\n";
-			break;
-		case 5:
-			//call customer support function
-			support();
-			break;
-		case 6:
-			cout << "Exiting. . .\n";
-			break;
-		}
-	} while (ch != 6);
-=======
     int ch;
     
     do {
@@ -1029,7 +733,6 @@ void customer_interface() {//edited
                 break;
         }
     } while (ch != 6);
->>>>>>> 7608926919a2b3dee167355c36f4c153702f71e9
 }
 
 //TEST LIST
