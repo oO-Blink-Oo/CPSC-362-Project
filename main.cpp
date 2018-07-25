@@ -399,6 +399,7 @@ public:
     {
         int user_choice;
         string firstName, lastName;
+        string category, title;
         size_t ISBN;
         author temp(firstName, lastName);
         cout << "\n\t\t\tSearch by:\n"
@@ -424,9 +425,21 @@ public:
                 printBooks();
                 order_interface();
                 break;
-            case 2:
                 
+            case 2://TITLE
+                cout << "Input Title: ";
+                cin >> title;
+                cout << "\nBooks by this title is(are): \n";
+                searchedList_.clear();
+                for(int i = 0; i < bk_.size(); i++){
+                    if(bk_[i].title_ == title){
+                        searchedList_.push_back(bk_[i]);
+                    }
+                }
+                printBooks();
+                order_interface();
                 break;
+                
             case 3://AUTHOR
                 cout << "Input author's firstName and last name <firstName>_<lastName>: ";
                 cin >> firstName;
@@ -446,8 +459,21 @@ public:
                 printBooks();
                 order_interface();
                 break;
-            case 4:
+                
+            case 4://CATEGORY
+                cout << "Input Category: ";
+                cin >> category;
+                cout << "\nBooks by this category is(are): \n";
+                searchedList_.clear();
+                for(int i = 0; i < bk_.size(); i++){
+                    if(bk_[i].category_ == category){
+                        searchedList_.push_back(bk_[i]);
+                    }
+                }
+                printBooks();
+                order_interface();
                 break;
+                
             case 5:
                 break;
         };
