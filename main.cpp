@@ -191,15 +191,15 @@ public:
 
 	}
 
-	//4. SUM THE TOTAL OF THE SHOPPING CART  //NEEDS TO BE IMPLEMENTED STILL
-	double sumShoppingCart() {
-
-	}
-
-	//5. SUBTRACT TOTAL SUM OF SHOPPING CART + TAX FROM(-) MONEY //NEEDS TO BE IMPLEMENTED STILL
-	double totalMoney() {
-		//
-	}
+	//    //4. SUM THE TOTAL OF THE SHOPPING CART  //NEEDS TO BE IMPLEMENTED STILL
+	//    double sumShoppingCart() {
+	//        
+	//    }
+	//    
+	//    //5. SUBTRACT TOTAL SUM OF SHOPPING CART + TAX FROM(-) MONEY //NEEDS TO BE IMPLEMENTED STILL
+	//    double totalMoney() {
+	//        //
+	//    }
 
 private:
 	string customerName_;
@@ -381,7 +381,7 @@ public:
 		int counter = 0;
 		for (it; it != searchedList_.end(); it++) {
 
-			cout << counter << ".) " <<*it << "\n";
+			cout << counter << ".) " << *it << "\n";
 			counter++;
 		}
 	}
@@ -389,7 +389,7 @@ public:
 	//ORDER INTERFACE//
 	void order_interface() {
 		int user_choice;
-		
+
 		cout << "Please select book to order: ";
 		cin >> user_choice;
 		guest_customer.addToShoppingCart(searchedList_[user_choice]);
@@ -399,6 +399,7 @@ public:
 	{
 		int user_choice;
 		string firstName, lastName;
+		size_t ISBN;
 		author temp(firstName, lastName);
 		cout << "\n\t\t\tSearch by:\n"
 			<< "\t\t\t\t1. ISBN\n"//chloe
@@ -409,36 +410,51 @@ public:
 		cin >> user_choice;
 
 		//do {
-			switch (user_choice) {
-			case 1:
-				break;
-			case 2:
-				break;
-			case 3://AUTHOR
-				cout << "Input author's firstName and last name <firstName>_<lastName>: ";
-				cin >> firstName;
-				cin >> lastName;
-				
-				cout << "\n Books by this author is(are): \n";
-				//clear vector first
-				searchedList_.clear();
-				
-				//used to populate vector used for the searched books
-				for (int i = 0; i < bk_.size(); i++) {
-					
-					if (bk_[i].author_.lname_ == lastName && bk_[i].author_.fname_ == firstName) {
-						searchedList_.push_back(bk_[i]);
-					}
+		switch (user_choice) {
+		case 1://ISBN
+			cout << "Input ISBN: ";
+			cin >> ISBN;
+			cout << "\nBook by this ISBN is: \n";
+			searchedList_.clear();
+			for (int i = 0; i < bk_.size(); i++) {
+				if (bk_[i].isbn_ == ISBN) {
+					searchedList_.push_back(bk_[i]);
 				}
-				printBooks();
-				order_interface();
-				break;
-			case 4:
-				break;
-			case 5:
-				break;
-			};
+			}
+			printBooks();
+			order_interface();
+			break;
+		case 2:
+
+			break;
+		case 3://AUTHOR
+			cout << "Input author's firstName and last name <firstName>_<lastName>: ";
+			cin >> firstName;
+			cin >> lastName;
+
+			cout << "\n Books by this author is(are): \n";
+			//clear vector first
+			searchedList_.clear();
+
+			//used to populate vector used for the searched books
+			for (int i = 0; i < bk_.size(); i++) {
+
+				if (bk_[i].author_.lname_ == lastName && bk_[i].author_.fname_ == firstName) {
+					searchedList_.push_back(bk_[i]);
+				}
+			}
+			printBooks();
+			order_interface();
+			break;
+		case 4:
+			break;
+		case 5:
+			break;
+		};
 		//} while (user_choice != 5);
+	}
+	void viewShoppingCart() {
+		guest_customer.viewShoppingCart();
 	}
 private:
 	customer guest_customer;
@@ -503,7 +519,7 @@ int main(int argc, const char * argv[]) {
 	filewrapper fw(argv[1]);
 
 	book bk;
-	
+
 	int counter = 0;
 	while (fw >> bk) {
 		bs.add(bk);
@@ -678,7 +694,7 @@ void customer_interface() {//edited
 			bs.search_interface();
 			break;
 		case 2:
-
+			bs.viewShoppingCart();
 			break;
 		case 3:
 			cout << "\t\t\tFEATURE NOT AVAILABLE IN THIS CURRENT VERSION\n";
