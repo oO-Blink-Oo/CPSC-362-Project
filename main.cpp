@@ -417,6 +417,20 @@ public:
 		cout << "Transaction has been completed. Thank you!\n";
 		
 		cout << "Your current balance is: $" << setprecision(2) << fixed << guest_customer.getMoney();
+		
+		for (int  i = 0; i < guest_customer.shoppingCart_.size(); i++)
+		{
+			size_t tempISBN = guest_customer.shoppingCart_[i].isbn_;
+			
+			for (int j = 0; j < bk_.size(); j++)
+			{
+				if (tempISBN == bk_[j].isbn_) {
+					bk_[j].quantity_--;
+				}
+			}
+		}
+	
+		guest_customer.shoppingCart_.clear();
 	}
 	/*void totalShoppingCart() {
 		subTotal = guest_customer.sumShoppingCart();
@@ -538,6 +552,7 @@ public:
         //} while (user_choice != 5);
     }
 private:
+	
 	double subTotal;
 	double total;
     customer guest_customer;
