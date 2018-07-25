@@ -170,10 +170,11 @@ public:
         
         vector <book>::iterator it = shoppingCart_.begin();
         cout << this->customerName_ << ", your shopping cart has: \n";
+		int index = 0;
         for (it; it != shoppingCart_.end(); it++) {
             
-            cout << *it << "\n";
-            
+            cout << index << ".) "<<  *it << "\n";
+			index++;
         }
     }
     
@@ -187,20 +188,33 @@ public:
     //3. REMOVE FROM SHOPPING CART
     void removeFromShoppingCart(int n) {
         
-        shoppingCart_.erase(shoppingCart_.begin() + (n - 1));
+        shoppingCart_.erase(shoppingCart_.begin() + n);
         
     }
     
 //    //4. SUM THE TOTAL OF THE SHOPPING CART  //NEEDS TO BE IMPLEMENTED STILL
-//    double sumShoppingCart() {
-//        
-//    }
+    double sumShoppingCart() {
+		double subTotal = 0;
+		double tax = 1.09;
+		for (int i = 0; i < shoppingCart_.size(); i++)
+		{
+			subTotal += shoppingCart_[i].price_;
+		}
+		return subTotal;
+    }
 //    
-//    //5. SUBTRACT TOTAL SUM OF SHOPPING CART + TAX FROM(-) MONEY //NEEDS TO BE IMPLEMENTED STILL
+////    //5. SUBTRACT TOTAL SUM OF SHOPPING CART + TAX FROM(-) MONEY //NEEDS TO BE IMPLEMENTED STILL
 //    double totalMoney() {
-//        //
+//        //tax
+//		double tax = 1.09;
+//		
 //    }
-    
+	double balance() {
+		money_ -= sumShoppingCart() * 1.09;
+	}
+	double getMoney() {
+		return money_;
+	}
 private:
     string customerName_;
     vector <size_t> trackingNumbers;
@@ -386,6 +400,7 @@ public:
         }
     }
     
+	
     //ORDER INTERFACE//
     void order_interface() {
         int user_choice;
@@ -394,7 +409,50 @@ public:
         cin >> user_choice;
         guest_customer.addToShoppingCart(searchedList_[user_choice]);
     }
-    
+
+	void makePayment() {
+		cout << "Your subtotal is: $" << setprecision(2) << fixed << guest_customer.sumShoppingCart() << endl;
+		cout << "Your total is: $" << setprecision(2) << fixed << guest_customer.sumShoppingCart() * 1.09 << endl;
+		guest_customer.balance();//payed has been subtracted from total money
+		cout << "Transaction has been completed. Thank you!\n";
+		
+		cout << "Your current balance is: $" << setprecision(2) << fixed << guest_customer.getMoney();
+	}
+	/*void totalShoppingCart() {
+		subTotal = guest_customer.sumShoppingCart();
+		cout << "\t\t\t\t\tSubtotal = $" << setprecision(2) << subTotal << endl
+			<< "\t\t\t\t\tTotal = $" << setprecision(2) << subTotal * 1.09 << endl;
+	}
+	void makePayment() {
+		double tax = 1.09;
+		guest_customer.getMoney() -= subTotal * tax;
+		cout << "\t\t\t\tYour current balance is: " << guest_customer.getMoney();
+	}*/
+	void viewShoppingCart() {
+		int user_choice;
+		int remove_selection;
+		guest_customer.viewShoppingCart();
+		cout << "\t\t\t1.) Make payment\n"
+			<< "\t\t\t2.) Remove book from shopping cart\n"
+			<< "\t\t\t3.) Search for more book(s)\n";
+		cin >> user_choice;
+		switch (user_choice)
+		{
+		case 1:
+			makePayment();
+			break;
+		case 2:
+			cout << "Please select the book you want to remove: ";
+			cin >> remove_selection;
+			guest_customer.removeFromShoppingCart(remove_selection);
+			break;
+		case 3:
+			search_interface();
+			break;
+		default:
+			break;
+		}
+	}
     void search_interface()
     {
         int user_choice;
@@ -480,6 +538,8 @@ public:
         //} while (user_choice != 5);
     }
 private:
+	double subTotal;
+	double total;
     customer guest_customer;
     vector<book> searchedList_;
     vector<book> bk_;
@@ -717,6 +777,7 @@ void customer_interface() {//edited
                 bs.search_interface();
                 break;
             case 2:
+				bs.viewShoppingCart();
                 break;
             case 3:
                 cout << "\t\t\tFEATURE NOT AVAILABLE IN THIS CURRENT VERSION\n";
