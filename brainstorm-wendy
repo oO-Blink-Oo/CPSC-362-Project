@@ -1,33 +1,33 @@
 case 2:
-				string temp_title;
-				cout << "Input title: ";
-				cin >> temp_title;
+			string temp_title;
+			cout << "Input title: ";
+			cin >> temp_title;
 
-				cout << "\n Books by this title is(are): \n";
-				//clear vector first
-				searchedList.clear();
+			cout << "\n Books by this title is(are): \n";
+			//clear vector first
+			searchedList_.clear();
 
-				for (int i = 0; i < bk_.size(); i++) {
-					if (bk_[i].title_ == temp_title) {
-						searchedList.push_back(bk_[i]);
-					}
+			for (int i = 0; i < bk_.size(); i++) {
+				if (bk_[i].title_ == temp_title) {
+					searchedList_.push_back(bk_[i]);
 				}
-				printBooks();
-				break;
+			}
+			printBooks();
+			break();
 
 case 4:
-				string temp_category;
-				cout << "Input category: ";
-				cin >> temp_category;
+			string temp_category;
+			cout << "Input category: ";
+			cin >> temp_category;
 
-				cout << "\n Books by this category is(are): \n";
-				//clear vector first
-				searchedList.clear();
+			cout << "\n Books by this category is(are): \n";
+			//clear vector first
+			searchedList_.clear();
 
-				for (int i = 0; i < bk_.size(); i++) {
-					if (bk_[i].category_ == temp_category) {
-						searchedList.push_back(bk_[i]);
-					}
+			for (int i = 0; i < bk_.size(); i++) {
+				if (bk_[i].category_ == temp_category) {
+					searchedList_.push_back(bk_[i]);
 				}
-				printBooks();
-				break;
+			}
+			printBooks();
+			break;
