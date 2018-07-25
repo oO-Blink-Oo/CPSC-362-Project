@@ -163,6 +163,7 @@ public:
 	customer(string customerName) : customerName_(customerName), money_(1000) {}
 
 	//FUNCTIONS NEEDED:
+	friend class book_sorting;
 
 	//1.VIEW SHOPPING CART
 	void viewShoppingCart() {
@@ -178,9 +179,9 @@ public:
 
 	//2. ADD TO SHOPPING CART
 	void addToShoppingCart(book item) {//parameter should be the item to be added in the vector
-
+		cout << endl;
 		shoppingCart_.push_back(item);
-
+		viewShoppingCart();
 	}
 
 	//3. REMOVE FROM SHOPPING CART
@@ -286,7 +287,7 @@ public:
 	}
 
 	book pick_book(size_t n) {//function for picking a book from vector of books
-		return bk_[n];
+		return searchedList_[n];
 	}
 
 	void print_by_selection(const std::string& msg, std::function<bool(const book& a, const book& b)> predicate) {//how do we use this? (Chloe)
@@ -376,28 +377,38 @@ public:
 
 	void printBooks() {
 
-		vector <book>::iterator it = searchedList.begin();
-		int counter = 1;
-		for (it; it != searchedList.end(); it++) {
+		vector <book>::iterator it = searchedList_.begin();
+		int counter = 0;
+		for (it; it != searchedList_.end(); it++) {
 
-			cout << counter <<*it << "\n";
+			cout << counter << ".) " <<*it << "\n";
 			counter++;
 		}
 	}
+
+	//ORDER INTERFACE//
+	void order_interface() {
+		int user_choice;
+		
+		cout << "Please select book to order: ";
+		cin >> user_choice;
+		guest_customer.addToShoppingCart(searchedList_[user_choice]);
+	}
+
 	void search_interface()
 	{
 		int user_choice;
 		string firstName, lastName;
 		author temp(firstName, lastName);
 		cout << "\n\t\t\tSearch by:\n"
-			<< "\t\t\t\t1. ISBN\n"
-			<< "\t\t\t\t2. Title\n"
-			<< "\t\t\t\t3. Author\n"
+			<< "\t\t\t\t1. ISBN\n"//chloe
+			<< "\t\t\t\t2. Title\n"//xiaomei
+			<< "\t\t\t\t3. Author\n"//ian
 			<< "\t\t\t\t4. Category\n"
 			<< "\t\t\t\t5. Exit\n";
 		cin >> user_choice;
 
-		do {
+		//do {
 			switch (user_choice) {
 			case 1:
 				break;
@@ -410,28 +421,28 @@ public:
 				
 				cout << "\n Books by this author is(are): \n";
 				//clear vector first
-				searchedList.clear();
+				searchedList_.clear();
 				
+				//used to populate vector used for the searched books
 				for (int i = 0; i < bk_.size(); i++) {
 					
 					if (bk_[i].author_.lname_ == lastName && bk_[i].author_.fname_ == firstName) {
-						//cout << i << ".) ";
-						searchedList.push_back(bk_[i]);
-						
-						//cout << searchedList[i] << endl;
+						searchedList_.push_back(bk_[i]);
 					}
 				}
 				printBooks();
+				order_interface();
 				break;
 			case 4:
 				break;
 			case 5:
 				break;
 			};
-		} while (user_choice != 5);
+		//} while (user_choice != 5);
 	}
 private:
-	vector<book> searchedList;
+	customer guest_customer;
+	vector<book> searchedList_;
 	vector<book> bk_;
 };
 
@@ -482,6 +493,8 @@ private:
 /////////////////////////////////////////////////////////////////////////////////////////GLOBAL VARIABLE/////////////////////////////////////////////////////////////////////////
 book_sorting bs;//This class object has the vector of books and functions to sort it
 
+
+
 				/*********************************///MAIN FUNCTION///***********************************************************/
 int main(int argc, const char * argv[]) {
 
@@ -490,6 +503,7 @@ int main(int argc, const char * argv[]) {
 	filewrapper fw(argv[1]);
 
 	book bk;
+	
 	int counter = 0;
 	while (fw >> bk) {
 		bs.add(bk);
@@ -497,6 +511,7 @@ int main(int argc, const char * argv[]) {
 	}
 
 	welcomePrompt();
+	//guestCustomer.viewShoppingCart();
 	cout << "\n\t\t\tTHANK YOU. SEE YOU AGAIN\n";
 
 	return 0;
@@ -604,20 +619,6 @@ void support()
 	cout << "\t\t\t\tPhone number: 1 (800) 555-555";
 	cout << "\n\t\t\t\tEmail: uNeedHelp@weGotyou.net\n\n";
 }
-
-
-
-//FEATURE MENU
-//void featureMenu() {
-//	cout << setw(50) << "Please select from the menu:\n";
-//	cout << setw(50) << "1. Search and pick a book\n" //searching for book should ask user if they want to search through ISBN, Title or Author, once found user is asked if what to do next; order, view more
-//
-//		<< setw(63) <<  "2. View shopping cart\n"//prompt user what to do next; search and pick frmo the displayed selection
-//
-//		<< setw(52) <<  "3. Contact Customer Support\n"//outputs customer support email and number
-//		<< setw(32) <<  "4. Exit\n";
-//
-//}
 
 void admin_interface() {
 	int ch;
