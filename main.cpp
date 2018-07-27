@@ -15,8 +15,6 @@
 
 #define FILE_ERROR 2
 
-
-
 using namespace std;
 
 //test functions:
